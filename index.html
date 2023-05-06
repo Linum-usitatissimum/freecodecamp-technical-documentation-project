@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="styles.css" rel="stylesheet">
+    <title>opacity-CSS:Cascading Style Sheets</title>
+  </head>
+  <body>
+    <main id="main-doc">
+    
+      <aside>
+      <nav id="navbar">
+        <header>In this Article:</header>
+        <ul id="nav">
+          <li class="nav">
+            <a href="#syntax" class="nav-link">
+              Syntax
+            </a>
+           </li>  
+           <li class="nav">
+              <a href="#description" class="nav-link">
+                Description
+              </a>
+            </li>
+            <li class="nav">
+               <a href="#accessibility_concerns" class="nav-link">
+                 Accessibility concerns
+               </a>
+              </li>                
+              <li class="nav">
+                <a href="#formal_definition" class="nav-link">
+                Formal definition
+                 </a>
+              </li>
+               
+              <li class="nav">
+                <a href="#formal_syntax" class="nav-link">
+                Formal syntax
+                </a>
+              </li>
+              <li class="nav">
+                <a href="#examples" class="nav-link">
+                  Examples
+                   </a>
+                  </li>
+              <li class="nav">
+                 <a href="#about_this_page" class="nav-link">
+                About this page
+                </a>
+                </li>
+                
+         </ul>
+       </nav>
+      </aside>
+      <div class="wrap">
+      <header><h1>opacity</h1></header>
+      <p>The <code class="body-code">opacity</code> CSS property sets the opacity of an element. Opacity is the degree to which content behind an element is hidden, and is the opposite of transparency.</p>
+  
+      
+      
+      <section class="main-section" id="syntax">
+        <header><h2>Syntax</h2></header>
+        
+          <ul class="syntax">
+            <li class="syntax"><code><span class="red">opacity:</span> 0.9; </code></li>
+            <li class="syntax"><code><span class="red">opacity:</span> 90%; </code></li>
+            <li class="syntax darkgrey"><code>/* Global values */ </code></li>
+            <li class="syntax"><code><span class="red">opacity:</span> inherit; </code></li>
+            <li class="syntax"><code><span class="red">opacity:</span> initial; </code></li>
+            <li class="syntax"><code><span class="red">opacity:</span> revert; </code></li>
+            <li class="syntax"><code><span class="red">opacity:</span> revert-layer; </code></li>
+            <li class="syntax"><code><span class="red">opacity:</span> unset; </code></li>
+        </ul>
+       
+        <h3 class="font">Values</h3>
+        <code class="body-code">&lt;alpha-value&gt;</code>
+        <p>A <code class="body-code"> &lt;number&gt; </code> in the range <code class="body-code">0.0</code> to <code class="body-code">1.0</code>, inclusive, or a <code class="body-code"> &lt;percentage&gt; </code> in the range <code class="body-code">0%</code> to <code class="body-code">100%</code>, inclusive, representing the opacity of the channel (that is, the value of its alpha channel). Any value outside the interval, though valid, is clamped to the nearest limit in the range.</p>
+        <table>
+          <thead>
+            <tr>
+              <td>Value</td>
+              <td>Meaning</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code class="body-code">0</code>
+              </td>
+              <td>The element is fully transparent (that is, invisible).
+              </td>
+            </tr>
+            <tr>
+              <td>Any <code class="body-code"> &lt;number&gt; </code> strictly between <code class="body-code">0</code> and <code class="body-code">1</code>
+              </td>
+              <td>The element is translucent (that is, content behind the element can be seen).
+              </td>
+            </tr>
+            <tr>
+              <td><code class="body-code">1</code> (default value)
+              </td>  
+              <td>The element is fully opaque (visually solid).
+              </td>
+            </tr>
+         
+          </tbody>
+        </table>
+      </section>
+      <section class="main-section" id="description">
+        <header><h2>Description</h2></header>
+        <p><code class="body-code">opacity</code> applies to the element as a whole, including its contents, even though the value is not inherited by child elements. Thus, the element and its children all have the same opacity relative to the element's background, even if they have different opacities relative to one another.</p>
+
+        <p>Using <code class="body-code">opacity</code> with a value other than <code class="body-code">1</code> places the element in a new stacking context.</p>
+
+        <p>To change the opacity of a background only, use the <code class="body-code">background</code> property with a <code class="body-code">color value</code> that allows for an alpha channel. For example:</p>
+        <pre><code class="body-code syntax">
+    <span class="red">background</span>: <span class="red">rgba</span>(<span class="black">0</span>, <span class="black">0</span>, <span class="black">0</span>, <span class="black">0.4</span>);
+      </code></pre>
+      </section>
+      <section class="main-section" id="accessibility_concerns">
+        <header><h2>Accessibility concerns</h2></header>
+        <p>If text opacity is adjusted, it is important to ensure that the contrast ratio between the color of the text and the background the text is placed over is high enough that people experiencing low vision conditions will be able to read the content of the page.</p>
+
+        <p>Color contrast ratio is determined by comparing the luminosity of the opacity-adjusted text and background color values. In order to meet current Web Content Accessibility Guidelines (WCAG), a ratio of 4.5:1 is required for text content and 3:1 for larger text such as headings. Large text is defined as 18.66px and bold or larger, or 24px or larger.</p>
+
+        <ul>
+          <li><a href="https://webaim.org/resources/contrastchecker/" alt="link for color contrast checker">WebAIM: Color Contrast Checker</a></li>
+          <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG/Perceivable#guideline_1.4_make_it_easier_for_users_to_see_and_hear_content_including_separating_foreground_from_background" alt="link for MDN Understanding WCAG">MDN Understanding WCAG, Guideline 1.4 explanations</a></li>
+          <li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html" alt="understanding success criterion"> Understanding Success Criterion 1.4.3 | W3C Understanding WCAG 2.0</a></li>
+        </ul>
+      </section>
+      <section class="main-section" id="formal_definition">
+        <header><h2>Formal definition</h2></header>
+        <table>
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Initial value</td>
+              <td><code class="body-code">1</code></td>
+            </tr>
+            <tr>
+              <td>Applies to</td>
+              <td>all elements</td>
+            </tr>
+            <tr>
+              <td>Inherited</td>
+              <td>no</td>
+            </tr>
+            <tr>
+              <td>Percentages</td>
+              <td>map to the range <code class="body-code">[0,1]</code></td>
+            </tr>
+            <tr>
+              <td>Computed value</td>
+              <td>The same as the specified value after clipping the <code class="body-code"> &lt;number&gt; </code> to the range [0.0, 1.0].</td>
+            </tr>
+            <tr>
+              <td>Animation type</td>
+              <td>by computed value type</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="main-section" id="formal_syntax">
+        <header><h2>Formal syntax</h2></header>
+        <pre >
+          <code class="body-code syntax" id="no-padding">
+     <span class="red">opacity = 
+          &lt;alpha-value&gt;  
+
+    &lt;alpha-value&gt; = 
+          &lt;number&gt;      |
+          &lt;percentage&gt;</span>
+        </code>
+      </pre>
+      </section>
+      <section class="main-section" id="examples">
+        <header><h2>Examples</h2></header>
+         <h3 class="font">Setting Opacity</h3>
+         <p>The following example demonstrates how the <code class="body-code">opacity</code> property changes the opacity of the entire element and content, thus making the text very hard to read.</p>
+         <h3 class="font">HTML</h3> 
+           <pre >
+              <code class="body-code syntax">
+  &lt;<span class="green">div</span> <span class="red">class</span>="<span class="green">light</span>"&gt;You can barely see this.&lt;/<span class="green">div</span>&gt;
+  &lt;<span class="green">div </span><span class="red">class</span>="<span class="green">medium</span>"&gt;This is easier to see.&lt;/<span class="green">div</span>&gt;
+  &lt;<span class="green">div </span><span class="red">class</span>="<span class="green">heavy</span>"&gt;This is very easy to see.&lt;/<span class="green">div</span>&gt;
+              </code>
+          </pre>
+         <h3 class="font">CSS</h3>
+         <pre>
+          <code class="body-code syntax"><span class="purple">div</span> {
+  <span class="red">background-color</span>: <span class="black">yellow</span>;
+  <span class="red">font-weight</span>: <span class="black">bold</span>;
+  <span class="red">font-size</span>: <span class="black">130%</span>;
+}
+<span class="purple">.light</span> {
+  <span class="red">opacity</span>: <span class="black">0.2</span>; /* Barely see the text over the background */
+}
+<span class="purple">.medium</span> {
+  <span class="red">opacity</span>: <span class="black">0.5</span>; /* See the text more clearly over the background */
+}
+<span class="purple">.heavy</span> {
+  <span class="red">opacity</span>: <span class="black">0.9</span>; /* See the text very clearly over the background */
+}
+        </code>
+      </pre>
+      <h3 class="font">Result</h3>
+      <div class="box">
+         <p class="box2" id="light"><span class="orangebox">You can barely see this.</span></p>
+         <p class="box3" id="medium"><span class="orangebox">This is easier to see.</p>
+         <p class="box4" id="dark"><span class="orangebox">This is very easy to see.</p>
+      </div>
+         <h3 class="font">Setting opacity on hover</h3>
+         <p>In the following example opacity is changed on hover, so the striped background image on the parent element shows through the image.</p>
+         <h3 class="font">HTML</h3>
+         <pre>
+           <code class="body-code syntax"> 
+     &lt;<span class="green">div</span> <span class="red">class</span>= "<span class="green">wrapper</span>"&gt;
+         &lt;<span class="green">img</span> 
+        <span class="red">src</span>=" <span class="green">./imgs/dino.svg</span>"
+        <span class="red">alt</span>=" <span class="green">MDN Dino</span>"
+        <span class="red">width</span>=" <span class="green">128</span>"
+        <span class="red">height</span>=" <span class="green">146</span>"
+        <span class="red">class</span>=" <span class="green">opacity</span>" /&gt;
+    &lt;/ <span class="green">div</span>&gt;  
+            </code>
+          </pre>
+         <h3 class="font">CSS</h3>
+         <pre>
+          <code class="body-code syntax">
+      <span class="purple">img.opacity</span> {
+        <span class="red">opacity</span>: <span class="black">1</span>;
+      }
+
+      <span class="purple">img.opacity:hover</span> {
+        <span class="red">opacity</span>: <span class="black">0.5</span>;
+      }
+
+      <span class="purple">.wrapper</span> {
+        <span class="red">border</span>:<span class="black">10px solid black</span>;
+        <span class="red">width</span>: <span class="black">200px</span>;
+        <span class="red">height</span>: <span class="black">160px</span>;
+        <span class="red">background-color</span>: <span class="black">blue</span>;
+        <span class="red">background-image</span>: <span class="red">linear-gradient</span>(
+          <span class="black">180deg</span>,
+          <span class="black">transparent 50%</span>,
+          <span class="red">rgba</span>(<span class="black">200</span>, <span class="black">200</span>, <span class="black">200</span>, <span class="black">0.5</span>) <span class="black">50%</span>
+        );
+        <span class="red">background-size</span>: <span class="black">40px 40px</span>;
+      }   
+          </code>
+         </pre>
+         <h3 class="font">Result</h3>
+         <div class="box">
+           <div class="wrapper">
+              <img
+                src="./imgs/dino.svg"
+                alt="MDN Dino"
+                width="128"
+                height="146"
+                class="opacity" />
+              </div>
+         </div>
+      </section>
+      <div class="about">
+      <section class="main-section" id="about_this_page">
+          <header><h2>About this page</h2></header>
+          <p>This page was created by myself for the freeCodeCamp's Responsive Web Design's "Build a Technical Documentation Page" Project. I have attempted to make it look as much as I can, within the limitations of my current knowledge and skill level, like The mdm's technical documentation page on the CSS value opacity, which you can find <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity" alt="link to css technical document">here</a>.</p>
+          <p>If there are any mistakes within the information in this page, please let me know via <a href="https://github.com/Linum-usitatissimum" alt="link for my github profile">github</a> so that I can rectify them.</p>
+        </section>
+       </div>
+     </div>
+    </main>
+  </body>
+
+</html>
